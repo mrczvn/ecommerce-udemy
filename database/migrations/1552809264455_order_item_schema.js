@@ -4,8 +4,8 @@
 const Schema = use('Schema')
 
 class OrderItemSchema extends Schema {
-  up () {
-    this.create('order_items', (table) => {
+  up() {
+    this.create('order_items', table => {
       table.increments()
       table.integer('product_id').unsigned()
       table.integer('quantity').unsigned()
@@ -17,7 +17,6 @@ class OrderItemSchema extends Schema {
         .references('id')
         .inTable('products')
         .onDelete('cascade')
-
       table
         .foreign('order_id')
         .references('id')
@@ -26,7 +25,7 @@ class OrderItemSchema extends Schema {
     })
   }
 
-  down () {
+  down() {
     this.drop('order_items')
   }
 }

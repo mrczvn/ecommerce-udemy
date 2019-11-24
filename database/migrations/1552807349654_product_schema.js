@@ -5,7 +5,7 @@ const Schema = use('Schema')
 
 class ProductSchema extends Schema {
   up() {
-    this.create('products', (table) => {
+    this.create('products', table => {
       table.increments()
       table.string('name', 200)
       table.integer('image_id').unsigned()
@@ -25,16 +25,16 @@ class ProductSchema extends Schema {
       table.integer('image_id').unsigned()
       table.integer('product_id').unsigned()
       table
-      .foreign('image_id')
-      .references('id')
-      .inTable('images')
-      .onDelete('cascade')
+        .foreign('image_id')
+        .references('id')
+        .inTable('images')
+        .onDelete('cascade')
 
       table
-      .foreign('product_id')
-      .references('id')
-      .inTable('products')
-      .onDelete('cascade')
+        .foreign('product_id')
+        .references('id')
+        .inTable('products')
+        .onDelete('cascade')
     })
 
     this.create('category_product', table => {
