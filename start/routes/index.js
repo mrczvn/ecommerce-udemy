@@ -20,6 +20,11 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 }).as('home')
 /**
- * Importa as rotas de autenticação
+ * Importa as rotas de Autenticação
  */
 require('./auth')
+
+/**
+ * Importa as rotas de Admin
+ */
+require('./admin')
