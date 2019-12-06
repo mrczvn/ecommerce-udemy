@@ -18,7 +18,7 @@ Factory.blueprint('App/Models/User', faker => {
     return {
         name: faker.first(),
         surname: faker.last(),
-        email: faker.email({ domain: 'example.com' }),
+        email: faker.email({ domain: 'marvn.ants@gmail.com' }),
         password: 'secret'
     }
 })
@@ -30,7 +30,7 @@ Factory.blueprint('App/Models/Category', faker => {
     }
 })
 
-Factory.blueprint('App/Models/Products', faker => {
+Factory.blueprint('App/Models/Product', faker => {
     return {
         name: faker.animal(),
         description: faker.sentence(),
